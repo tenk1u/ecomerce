@@ -39,3 +39,10 @@ services:
         condition: service_healthy
     environment:
       - RABBITMQ_URL=amqp://rabbitmq:5672
+
+  frontend:
+    build: ./apps/frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - orders

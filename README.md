@@ -17,11 +17,15 @@ Este proyecto implementa un sistema de gestión de pedidos utilizando arquitectu
    ```bash
    docker-compose up --build
    ```
-2. Crear un pedido (Happy Path):
+2. Acceder al Frontend:
+   - Abre `http://localhost:5173` en tu navegador.
+   - Usa el formulario para crear pedidos y ver la lista actualizada en tiempo real.
+
+3. Crear un pedido (Alternativa manual):
    ```bash
    curl -X POST http://localhost:3000/orders -H "Content-Type: application/json" -d '{"productId": "123", "quantity": 1, "price": 10, "userId": "user1"}'
    ```
-3. Ver logs para observar el flujo SAGA (Reserva -> Pago -> Confirmación o Compensación).
+4. Ver logs para observar el flujo SAGA (Reserva -> Pago -> Confirmación o Compensación).
 
 ## Ejecución en Kubernetes
 1. Asegúrate de tener un cluster local (ej. Minikube o Docker Desktop) y `kubectl`.
